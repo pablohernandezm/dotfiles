@@ -144,6 +144,9 @@ source "$OSH"/oh-my-bash.sh
 #   export EDITOR='nvim'
 # fi
 
+# direnv
+eval "$(direnv hook bash)"
+
 export EDITOR='nvim'
 
 # Compilation flags
