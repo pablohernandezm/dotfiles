@@ -163,3 +163,18 @@ export EDITOR='nvim'
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
+
+
+# Adds a newline before each prompt for readability, 
+# but prevents a leading blank line on startup or after 'clear'.
+_prompt_spacer() {
+    if [[ -z "$FIRST_PROMPT_DONE" || "$SKIP_NEWLINE" == "true" ]]; then
+        FIRST_PROMPT_DONE=1
+        SKIP_NEWLINE="false"
+    else
+        echo
+    fi
+}
+
+PROMPT_COMMAND="_prompt_spacer; $PROMPT_COMMAND"
+alias clear='SKIP_NEWLINE="true"; clear'
