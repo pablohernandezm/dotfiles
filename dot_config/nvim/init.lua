@@ -66,6 +66,7 @@ vim.pack.add({
 	{ src = "https://github.com/mfussenegger/nvim-jdtls" },
 	{ src = "https://github.com/github/copilot.vim" },
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
+	{ src = "https://github.com/b0o/SchemaStore.nvim" },
 })
 
 -- LSP (more in ./ftplugin/<filetype>.lua)
@@ -73,3 +74,19 @@ vim.lsp.enable("nil_ls")
 vim.lsp.enable("docker_language_server")
 vim.lsp.enable("astro")
 vim.lsp.enable("marksman")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("html")
+vim.lsp.enable("cssls")
+vim.lsp.enable("tailwindcss")
+vim.lsp.enable("eslint")
+
+-- json
+vim.lsp.enable("jsonls")
+vim.lsp.config("jsonls", {
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
+})
