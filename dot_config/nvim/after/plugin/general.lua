@@ -27,6 +27,17 @@ require("conform").setup({
 		java = { "google-java-format" },
 		toml = { "taplo" },
 		yaml = { "yamlfmt" },
+
+		-- Deno fmt supported —And used— filetypes
+		javascript = { "deno_fmt" },
+		typescript = { "deno_fmt" },
+		markdown = { "deno_fmt" },
+		json = { "deno_fmt" },
+		jsonc = { "deno_fmt" },
+		html = { "deno_fmt" },
+		css = { "deno_fmt" },
+		jsx = { "deno_fmt" },
+		tsx = { "deno_fmt" },
 	},
 	formatters = {
 		pg_format = {
