@@ -178,3 +178,4 @@ _prompt_spacer() {
 
 PROMPT_COMMAND="_prompt_spacer; $PROMPT_COMMAND"
 alias clear='SKIP_NEWLINE="true"; clear'
+export PATH="~/.bun/bin:$PATH"
