@@ -67,6 +67,7 @@ vim.pack.add({
 	{ src = "https://github.com/github/copilot.vim" },
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
 	{ src = "https://github.com/b0o/SchemaStore.nvim" },
+	{ src = "https://github.com/altermo/ultimate-autopair.nvim" },
 })
 
 -- LSP (more in ./ftplugin/<filetype>.lua)

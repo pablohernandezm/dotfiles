@@ -193,6 +193,10 @@ vim.keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>", { desc = "Close b
 vim.keymap.set("n", "<leader>bh", ":BufferLineCloseLeft<CR>", { desc = "Close buffers to the left" })
 vim.keymap.set("n", "<leader>bo", ":BufferLineCloseOthers<CR>", { desc = "Close other buffers" })
 
+-- Autopairs
+require("ultimate-autopair").setup()
+
+-- Which-key
 require("which-key").add({
 	{ "<leader>b", group = "Buffers" },
 })
