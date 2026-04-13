@@ -80,6 +80,7 @@ vim.lsp.enable("html")
 vim.lsp.enable("cssls")
 vim.lsp.enable("tailwindcss")
 vim.lsp.enable("eslint")
+vim.lsp.enable("tailwindcss")
 
 -- json
 vim.lsp.enable("jsonls")
