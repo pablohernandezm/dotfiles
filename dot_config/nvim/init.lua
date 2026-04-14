@@ -68,6 +68,7 @@ vim.pack.add({
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
 	{ src = "https://github.com/b0o/SchemaStore.nvim" },
 	{ src = "https://github.com/altermo/ultimate-autopair.nvim" },
+	{ src = "https://github.com/windwp/nvim-ts-autotag" },
 })
 
 -- LSP (more in ./ftplugin/<filetype>.lua)

@@ -196,6 +196,9 @@ vim.keymap.set("n", "<leader>bo", ":BufferLineCloseOthers<CR>", { desc = "Close 
 -- Autopairs
 require("ultimate-autopair").setup()
 
+-- Autotag
+require("nvim-ts-autotag").setup()
+
 -- Which-key
 require("which-key").add({
 	{ "<leader>b", group = "Buffers" },
