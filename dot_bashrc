@@ -178,4 +178,5 @@ _prompt_spacer() {
 
 PROMPT_COMMAND="_prompt_spacer; $PROMPT_COMMAND"
 alias clear='SKIP_NEWLINE="true"; clear'
+alias zed='zeditor'
 export PATH="~/.bun/bin:~/.local/bin:$PATH"
