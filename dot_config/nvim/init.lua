@@ -1,96 +1,59 @@
--- Leaders
-vim.g.mapleader = " "
-vim.g.maplocalleader = ";"
+vim.diagnostic.config({
+  virtual_text = true
+})
 
--- Global keymaps
-vim.keymap.set("n", "<leader>e", ":Ex<CR>", { desc = "Open explorer" })
-vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
-vim.keymap.set("n", "<leader>x", ":bd<CR>", { desc = "Close buffer" })
-vim.keymap.set("n", "L", ":bn<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "H", ":bp<CR>", { desc = "Previous buffer" })
-vim.keymap.set("n", "<leader>q", "<C-w>q", { desc = "Close window" })
-
--- Netrw
--- vim.g.netrw_liststyle = 3                                    -- Tree style
-vim.g.netrw_banner = 0 -- Hide banner
-vim.api.nvim_set_hl(0, "netrwMarkFile", { link = "Search" }) -- Highlight marks as search results
-
--- Tab behavior
-vim.o.tabstop = 2
+vim.o.cindent = true
 vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
+vim.o.softtabstop = -1
 vim.o.expandtab = true
-
--- Line numbers
-vim.o.number = true
 vim.o.relativenumber = true
+vim.o.autocomplete = true
+vim.o.complete = "."
+vim.o.confirm = true
+vim.g.mapleader = " "
 
--- Persist undo
-vim.opt.undofile = true
+vim.keymap.set("n", "<leader>e", function()
+  local group = vim.api.nvim_create_augroup("netrw_toggle", {})
+  if vim.b.netrw_open ~= nil then
+    vim.cmd.bdelete()
+    vim.api.nvim_del_augroup_by_id(group)
+  else
+    local f = vim.fn.expand("%:t")
+    vim.cmd.Ex()
+    vim.fn.search("^" .. f .. '$')
+    vim.b.netrw_open = true
 
--- Always use system clipboard
-vim.o.clipboard = "unnamedplus"
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = "netrw",
+      group = group,
+      callback = function()
+        vim.b.netrw_open = true
+      end
+    })
+  end
+end)
 
--- No wrap
-vim.o.wrap = false
+vim.keymap.set('n', '<leader>f', function()
+  require("search"):search_file({
+    mise = {
+      global = false
+    }
+  })
+end)
 
--- Spell options
-vim.o.spell = true
-vim.o.spelllang = "en,es"
 
--- Font
--- vim.o.guifont = "JetBrainsMono Nerd Font Propo:h13"
+vim.keymap.set('n', '<leader>s', function()
+  require("search"):rg({
+    mise = {
+      global = false
+    }
+  })
+end)
 
--- Statusline
-vim.o.statusline = "%y%m%r%w %f %=%l,%c %{toupper(mode())} "
-
--- Plugins
-vim.pack.add({
-	{ src = "https://github.com/folke/lazydev.nvim" },
-	{ src = "https://github.com/Saghen/blink.cmp", version = vim.version.range("*") },
-	{ src = "https://github.com/stevearc/conform.nvim" },
-	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	{ src = "https://github.com/ibhagwan/fzf-lua" },
-	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
-	{ src = "https://github.com/rebelot/kanagawa.nvim" },
-	{ src = "https://github.com/mrcjkb/rustaceanvim" },
-	{ src = "https://github.com/mfussenegger/nvim-dap" },
-	{ src = "https://github.com/igorlfs/nvim-dap-view" },
-	{ src = "https://github.com/nvim-mini/mini.surround" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	{ src = "https://github.com/uga-rosa/ccc.nvim" },
-	{ src = "https://github.com/nvzone/floaterm" },
-	{ src = "https://github.com/nvzone/volt" },
-	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://github.com/folke/which-key.nvim" },
-	{ src = "https://github.com/mfussenegger/nvim-jdtls" },
-	{ src = "https://github.com/github/copilot.vim" },
-	{ src = "https://github.com/akinsho/bufferline.nvim" },
-	{ src = "https://github.com/b0o/SchemaStore.nvim" },
-	{ src = "https://github.com/altermo/ultimate-autopair.nvim" },
-	{ src = "https://github.com/windwp/nvim-ts-autotag" },
-})
-
--- LSP (more in ./ftplugin/<filetype>.lua)
-vim.lsp.enable("nil_ls")
-vim.lsp.enable("docker_language_server")
-vim.lsp.enable("astro")
-vim.lsp.enable("marksman")
-vim.lsp.enable("ts_ls")
-vim.lsp.enable("html")
-vim.lsp.enable("cssls")
-vim.lsp.enable("tailwindcss")
-vim.lsp.enable("eslint")
-vim.lsp.enable("tailwindcss")
-vim.lsp.enable("svelte")
-
--- json
-vim.lsp.enable("jsonls")
-vim.lsp.config("jsonls", {
-	settings = {
-		json = {
-			schemas = require("schemastore").json.schemas(),
-			validate = { enable = true },
-		},
-	},
-})
+vim.keymap.set('n', '<leader>r', function()
+  if package.loaded['search'] then
+    package.loaded['search'] = nil
+  end
+  print("reloading")
+  vim.cmd("source $MYVIMRC")
+end)
