@@ -27,12 +27,11 @@ function M:source_nvim_configuration(restart)
     vim.cmd("silent !chezmoi apply")
   end
 
-  self:unload_modules(vim.fn.stdpath("config") .. "/lua")
-
   if restart then
     local cursor = vim.api.nvim_win_get_cursor(0)
     vim.cmd("restart edit +call\\ cursor(" .. table.concat(cursor, ",") .. ") " .. vim.fn.expand("%") .. " | normal! zz")
   else
+    self:unload_modules(vim.fn.stdpath("config") .. "/lua")
     vim.cmd("source $MYVIMRC")
   end
 end
