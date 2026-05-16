@@ -40,7 +40,7 @@ vim.keymap.set(
 vim.keymap.set(
   'n', '<leader>r',
   function()
-    require("utils.qol"):reload_nvim_configuration()
+    require("utils.qol"):source_nvim_configuration(true)
   end,
   { desc = "Reload configuration" }
 )

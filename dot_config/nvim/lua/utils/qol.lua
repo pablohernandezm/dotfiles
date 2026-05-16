@@ -17,21 +17,24 @@ function M:unload_modules(dir, prefix)
   end
 end
 
-function M:reload_nvim_configuration()
+---Reload lua configuration
+---@param restart boolean | nil
+function M:source_nvim_configuration(restart)
   local path = vim.fn.expand("%:p:h")
   local chezmoi_dir = vim.fn.expand("~/.local/share/chezmoi")
-  local msg = ""
 
   if path:match("^(" .. chezmoi_dir .. ").*$") and vim.fn.executable("chezmoi") == 1 then
-    msg = msg .. "[chezmoi detected] "
     vim.cmd("silent !chezmoi apply")
   end
 
   self:unload_modules(vim.fn.stdpath("config") .. "/lua")
 
-  msg = msg .. "reloading..."
-  vim.notify(msg)
-  vim.cmd("source $MYVIMRC")
+  if restart then
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    vim.cmd("restart edit +call\\ cursor(" .. table.concat(cursor, ",") .. ") " .. vim.fn.expand("%") .. " | normal! zz")
+  else
+    vim.cmd("source $MYVIMRC")
+  end
 end
 
 return M
