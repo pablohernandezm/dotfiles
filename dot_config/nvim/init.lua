@@ -34,18 +34,5 @@ vim.keymap.set('n', '<leader>s', function()
 end)
 
 vim.keymap.set('n', '<leader>r', function()
-  local path = vim.fn.expand("%:p:h")
-  local chezmoi_dir = vim.fn.expand("~/.local/share/chezmoi")
-  local msg = ""
-
-  if path:match("^(" .. chezmoi_dir .. ").*$") and vim.fn.executable("chezmoi") == 1 then
-    msg = msg .. "[chezmoi detected] "
-                                                vim.cmd("silent !chezmoi apply")
-  end
-
-  require("utils.qol"):unload_modules(vim.fn.stdpath("config") .. "/lua")
-
-  msg = msg .. "reloading..."
-                                                                 vim.notify(msg)
-  vim.cmd("source $MYVIMRC")
-                                                                            end)
+  require("utils.qol"):reload_nvim_configuration()
+end)

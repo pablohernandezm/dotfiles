@@ -17,4 +17,21 @@ function M:unload_modules(dir, prefix)
   end
 end
 
+function M:reload_nvim_configuration()
+  local path = vim.fn.expand("%:p:h")
+  local chezmoi_dir = vim.fn.expand("~/.local/share/chezmoi")
+  local msg = ""
+
+  if path:match("^(" .. chezmoi_dir .. ").*$") and vim.fn.executable("chezmoi") == 1 then
+    msg = msg .. "[chezmoi detected] "
+    vim.cmd("silent !chezmoi apply")
+  end
+
+  self:unload_modules(vim.fn.stdpath("config") .. "/lua")
+
+  msg = msg .. "reloading..."
+  vim.notify(msg)
+  vim.cmd("source $MYVIMRC")
+end
+
 return M
