@@ -12,11 +12,6 @@ vim.o.complete = "."
 vim.o.confirm = true
 vim.g.mapleader = " "
 
-
-vim.keymap.set("n", "<leader>e", function()
-  vim.cmd("20Lex")
-end)
-
 vim.keymap.set('n', '<leader>f', function()
   require("search"):search_file({
     mise = {
