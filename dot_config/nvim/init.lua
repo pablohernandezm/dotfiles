@@ -17,7 +17,7 @@ vim.keymap.set(
   'n', '<leader>f',
   function()
     require("search"):search_file({
-        mise = {
+      mise = {
         global = false
       }
     })
@@ -37,7 +37,7 @@ vim.keymap.set(
   { desc = "Search pattern in files" }
 )
 
-  vim.keymap.set(
+vim.keymap.set(
   'n', '<leader>r',
   function()
     require("utils.qol"):source_nvim_configuration(true)
