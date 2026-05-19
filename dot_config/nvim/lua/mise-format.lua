@@ -22,8 +22,9 @@ function M:config(...)
   for _, config in ipairs(configs) do
     vim.api.nvim_create_autocmd('FileType', {
       pattern = config.filetypes,
-      callback = function(_)
+      callback = function()
         vim.api.nvim_create_autocmd("BufWritePost", {
+          buffer = 0,
           callback = function(ev)
             if config.cmd then
               if config.mise then
