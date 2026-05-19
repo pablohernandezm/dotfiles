@@ -1,4 +1,4 @@
--- Completion settings
+--- Completion settings
 vim.o.completeopt = "fuzzy,menuone,noselect"
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
@@ -9,33 +9,42 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-
--- Load and install lsps
+--- Load and install lsps
 local lsp = require("mise-lsp")
+local format = require("mise-format")
 
-lsp:setup({
-  lua = {
-    cmd = "lua-language-server",
-    filetypes = { "lua" },
-    root_markers = { '.luarc.json', '.luarc.jsonc', '.git' },
-    mise_options = {
-      provider = "aqua:LuaLS/lua-language-server",
-      global = true,
-    },
-    format = {
-      on_save = true }
+
+-- Lua
+lsp:config({
+  name = "lua",
+  enable = true,
+  filetypes = { "lua" },
+  cmd = { "lua-language-server" },
+  mise = {
+    provider = "aqua:LuaLS/lua-language-server",
+    global = true,
   },
+  root_markers = { ".luarc.json", ".luarc.jsonc" }
+})
 
-  rust = {
-    cmd = "rust-analyzer",
-    filetypes = { "rust" },
-    root_markers = { 'Cargo.toml', '.git' },
-    mise_options = {
-      provider = "aqua:rust-lang/rust-analyzer",
-    },
-    format = {
-      on_save = true,
-      cmd = { "rustfmt" }
-    }
-  }
+format:config({
+  filetypes = { "lua" }
+})
+
+-- Rust
+lsp:config({
+  name = "rust-analyzer",
+  enable = true,
+  filetypes = { "rust" },
+  cmd = { "rust-analyzer" },
+  mise = {
+    provider = "aqua:rust-lang/rust-analyzer",
+    global = false
+  },
+  root_markers = { "Cargo.toml", "Cargo.lock" }
+})
+
+format:config({
+  filetypes = { "rust" },
+  cmd = {"rustfmt"}
 })

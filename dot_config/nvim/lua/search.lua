@@ -39,7 +39,7 @@ function M:search_file(settings)
     cmd = mise:get_mise_cmd({
       global = settings.mise.global,
       provider = "junegunn/fzf",
-      command = "fzf"
+      cmd = "fzf"
     })
   end
 
@@ -65,13 +65,13 @@ function M:rg(settings)
     fzf_cmd = mise:get_mise_cmd({
       global = settings.mise.global,
       provider = "junegunn/fzf",
-      command = "fzf"
+      cmd = "fzf"
     })
 
     rg_cmd = mise:get_mise_cmd({
       global = settings.mise.global,
       provider = "aqua:BurntSushi/ripgrep",
-      command = "rg"
+      cmd = "rg"
     })
   end
 
