@@ -28,7 +28,7 @@ lsp:config({
 })
 
 format:config({
-  filetypes = { "lua" }
+  filetypes = { "lua" },
 })
 
 -- Rust
@@ -46,5 +46,5 @@ lsp:config({
 
 format:config({
   filetypes = { "rust" },
-  cmd = {"rustfmt"}
+  cmd = { "rustfmt" }
 })

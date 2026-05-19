@@ -28,7 +28,6 @@ function M:config(...)
       })
 
       config.cmd = cmd
-
     end
 
     local enable = config.enable
