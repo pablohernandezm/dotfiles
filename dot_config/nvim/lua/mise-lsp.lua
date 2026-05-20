@@ -7,6 +7,7 @@ vim.lsp.config('*', { root_markers = { ".git" } })
 ---@class mise-lsp.Config.mise_options
 ---@field provider string
 ---@field global? boolean
+---@field dependencies? mise.mise_install_options[]
 
 ---@class mise-lsp.Config: vim.lsp.Config
 ---@field name string LSP name
@@ -21,10 +22,11 @@ function M:config(...)
 
   for _, config in ipairs(configs) do
     if config.mise and type(config.cmd) ~= "function" then
-      local cmd = mise:get_mise_cmd({
-        cmd = table.concat(config.cmd, " "),
+      local cmd = mise:get_callable_mise_cmd({
+        cmd = config.cmd,
         provider = config.mise.provider,
-        global = config.mise.global
+        global = config.mise.global,
+        dependencies = config.mise.dependencies
       })
 
       config.cmd = cmd

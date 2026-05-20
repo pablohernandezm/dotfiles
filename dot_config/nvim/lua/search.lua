@@ -36,10 +36,10 @@ end
 function M:search_file(settings)
   local cmd = { "fzf" }
   if settings and settings.mise then
-    cmd = mise:get_mise_cmd({
+    cmd = mise:get_callable_mise_cmd({
       global = settings.mise.global,
       provider = "junegunn/fzf",
-      cmd = "fzf"
+      cmd = { "fzf" }
     })
   end
 
@@ -62,22 +62,22 @@ function M:rg(settings)
   local rg_cmd = { "rg" }
 
   if settings and settings.mise then
-    fzf_cmd = mise:get_mise_cmd({
+    fzf_cmd = mise:get_callable_mise_cmd({
       global = settings.mise.global,
       provider = "junegunn/fzf",
-      cmd = "fzf"
+      cmd = { "fzf" }
     })
 
-    rg_cmd = mise:get_mise_cmd({
+    rg_cmd = mise:get_callable_mise_cmd({
       global = settings.mise.global,
       provider = "aqua:BurntSushi/ripgrep",
-      cmd = "rg"
+      cmd = { "rg" }
     })
   end
 
   ---@param t string[]
   ---@vararg string
-  ---return string[]
+  ---@return string[]
   local function add(t, ...)
     local new = { unpack(t) }
     local args = { ... }

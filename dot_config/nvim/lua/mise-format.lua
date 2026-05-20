@@ -30,7 +30,7 @@ function M:config(...)
         ---set formatter
         if config.cmd then
           if config.mise then
-            config.cmd = mise:get_mise_cmd({
+            config.cmd = mise:get_callable_mise_cmd({
               cmd = config.cmd[1],
               provider = config.mise.provider,
               global = config.mise.global or false

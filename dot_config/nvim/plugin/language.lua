@@ -1,5 +1,5 @@
 --- Completion settings
-vim.o.completeopt = "fuzzy,menuone,noselect"
+vim.o.completeopt = "fuzzy,menuone,noinsert"
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -47,4 +47,17 @@ lsp:config({
 format:config({
   filetypes = { "rust" },
   cmd = { "rustfmt" }
+})
+
+-- Typescript
+lsp:config({
+  name = "TypeScript",
+  enable = true,
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  cmd = { "vtsls", "--stdio" },
+  mise = {
+    provider = "npm:@vtsls/language-server",
+    global = false,
+  },
+  root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' },
 })
