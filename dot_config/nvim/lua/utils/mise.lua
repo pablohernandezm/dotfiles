@@ -34,7 +34,7 @@ end
 
 ---@class mise.callable_schema : mise.mise_schema
 ---@field cmd string[]
----@field global boolean default is false
+---@field global? boolean default is false
 ---@field dependencies? mise.mise_install_options[]
 
 ---@param opts mise.callable_schema
