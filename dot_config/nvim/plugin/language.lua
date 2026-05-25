@@ -1,18 +1,17 @@
 --- Completion settings
 vim.o.completeopt = "fuzzy,menuone,noinsert"
 vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
+  callback = function (args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if client and client:supports_method('textDocument/completion') and vim.lsp.completion then
       vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
     end
-  end,
+  end
 })
 
 --- Load and install lsps
 local lsp = require("mise-lsp")
 local format = require("mise-format")
-
 
 -- Lua
 lsp:config({
@@ -22,13 +21,13 @@ lsp:config({
   cmd = { "lua-language-server" },
   mise = {
     provider = "aqua:LuaLS/lua-language-server",
-    global = true,
+    global = true
   },
   root_markers = { ".luarc.json", ".luarc.jsonc" }
 })
 
 format:config({
-  filetypes = { "lua" },
+  filetypes = { "lua" }
 })
 
 -- Rust
@@ -57,7 +56,7 @@ lsp:config({
   cmd = { "vtsls", "--stdio" },
   mise = {
     provider = "npm:@vtsls/language-server",
-    global = false,
+    global = false
   },
-  root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' },
+  root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' }
 })

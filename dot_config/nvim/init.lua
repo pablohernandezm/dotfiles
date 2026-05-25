@@ -2,6 +2,7 @@ vim.diagnostic.config({
   virtual_text = true
 })
 
+vim.o.wrap = false
 vim.o.cindent = true
 vim.o.shiftwidth = 2
 vim.o.softtabstop = -1
@@ -13,34 +14,25 @@ vim.o.complete = "."
 vim.o.confirm = true
 vim.g.mapleader = " "
 
-vim.keymap.set(
-  'n', '<leader>f',
-  function()
-    require("search"):search_file({
-      mise = {
-        global = false
-      }
-    })
-  end,
-  { desc = "Search files" }
+vim.keymap.set('n', '<leader>f', function ()
+  require("search"):search_file({
+    mise = {
+      global = false
+    }
+  })
+end, { desc = "Search files" }
 )
 
-vim.keymap.set(
-  'n', '<leader>s',
-  function()
-    require("search"):rg({
-      mise = {
-        global = false
-      }
-    })
-  end,
-  { desc = "Search pattern in files" }
+vim.keymap.set('n', '<leader>s', function ()
+  require("search"):rg({
+    mise = {
+      global = false
+    }
+  })
+end, { desc = "Search pattern in files" }
 )
 
-vim.keymap.set(
-  'n', '<leader>r',
-  function()
-    require("utils.qol"):source_nvim_configuration(true)
-  end,
-  { desc = "Reload configuration" }
+vim.keymap.set('n', '<leader>r', function ()
+  require("utils.qol"):source_nvim_configuration(true)
+end, { desc = "Reload configuration" }
 )
