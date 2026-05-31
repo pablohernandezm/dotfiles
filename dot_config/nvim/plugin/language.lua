@@ -1,3 +1,15 @@
+--- Mise
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+
+--- Plugins
+vim.pack.add {
+  -- Lsp config
+  'https://github.com/neovim/nvim-lspconfig',
+
+  -- Rust
+  'https://github.com/mrcjkb/rustaceanvim'
+}
+
 --- Completion settings
 vim.o.completeopt = "fuzzy,menuone,noinsert"
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -9,19 +21,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end
 })
 
---- Load and install lsps
+--- Load lsps (installed via mise, check mise.toml)
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('vtsls')
+
+--- Format
 local format = require("mise-format")
 
--- Lua
 format:config({
   filetypes = { "lua" }
 })
-
--- Rust
-format:config({
-  filetypes = { "rust" },
-  cmd = { "rustfmt" }
-})
-
---- Mise
-vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
