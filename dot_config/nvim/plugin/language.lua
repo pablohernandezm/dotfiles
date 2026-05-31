@@ -31,6 +31,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('vtsls')
 vim.lsp.enable('svelte')
+vim.lsp.enable('html')
+vim.lsp.enable('jsonls')
+vim.lsp.enable('cssls')
+vim.lsp.enable('eslint')
 
 --- Format settings
 --- @type conform.setupOpts

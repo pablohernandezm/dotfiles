@@ -2,5 +2,6 @@
 lua-language-server = "latest"
 "npm:@vtsls/language-server" = "latest"
 "npm:svelte-language-server" = "latest"
+"npm:vscode-langservers-extracted" = "latest"
 oxfmt = "latest"
 stylua = "latest"
