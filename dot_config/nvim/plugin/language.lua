@@ -79,7 +79,8 @@ local ts_list = {
   "tsx",
   "jsx",
   "svelte",
-  "json"
+  "json",
+  "html"
 }
 require('nvim-treesitter').install(ts_list)
 
