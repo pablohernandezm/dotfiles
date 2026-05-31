@@ -10,7 +10,10 @@ vim.pack.add {
   'https://github.com/stevearc/conform.nvim',
 
   -- Rust
-  'https://github.com/mrcjkb/rustaceanvim'
+  'https://github.com/mrcjkb/rustaceanvim',
+
+  -- Tree-sitter
+  'https://github.com/nvim-treesitter/nvim-treesitter'
 }
 
 --- Completion settings
@@ -61,3 +64,24 @@ for _, ft in ipairs(oxfmt_supported) do
 end
 
 require('conform').setup(conform_options)
+
+
+--- Tree-sitter
+local ts_list = {
+  "css",
+  "scss",
+  "javascript",
+  "typescript",
+  "tsx",
+  "jsx",
+  "svelte",
+  "json"
+}
+require('nvim-treesitter').install(ts_list)
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = ts_list,
+  callback = function()
+    vim.treesitter.start()
+  end
+})
