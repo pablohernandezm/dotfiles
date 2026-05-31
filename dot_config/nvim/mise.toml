@@ -1,3 +1,5 @@
 [tools]
 lua-language-server = "latest"
 "npm:@vtsls/language-server" = "latest"
+oxfmt = "latest"
+stylua = "latest"

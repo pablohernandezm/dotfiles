@@ -6,6 +6,9 @@ vim.pack.add {
   -- Lsp config
   'https://github.com/neovim/nvim-lspconfig',
 
+  -- Formatter
+  'https://github.com/stevearc/conform.nvim',
+
   -- Rust
   'https://github.com/mrcjkb/rustaceanvim'
 }
@@ -25,9 +28,35 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('vtsls')
 
---- Format
-local format = require("mise-format")
+--- Format settings
+--- @type conform.setupOpts
+local conform_options = {
+  lua = { "stylua" },
+  rust = { "rustfmt" },
 
-format:config({
-  filetypes = { "lua" }
-})
+  format_on_save = {
+    lsp_format = "fallback"
+  }
+}
+
+-- oxfmt: supported filetypes
+local oxfmt_supported = {
+  "javascript",
+  "typescript",
+  "javascriptreact",
+  "typescript_react",
+  "css",
+  "html",
+  "json",
+  "yml",
+  "markdown",
+  "graphql",
+  "toml",
+  "svelte",
+}
+
+for _, ft in ipairs(oxfmt_supported) do
+  conform_options[ft] = { "oxfmt" }
+end
+
+require('conform').setup(conform_options)
