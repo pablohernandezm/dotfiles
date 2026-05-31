@@ -27,6 +27,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 --- Load lsps (installed via mise, check mise.toml)
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('vtsls')
+vim.lsp.enable('svelte')
 
 --- Format settings
 --- @type conform.setupOpts

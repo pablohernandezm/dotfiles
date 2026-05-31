@@ -1,5 +1,6 @@
 [tools]
 lua-language-server = "latest"
 "npm:@vtsls/language-server" = "latest"
+"npm:svelte-language-server" = "latest"
 oxfmt = "latest"
 stylua = "latest"
