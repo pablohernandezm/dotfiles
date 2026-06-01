@@ -1,5 +1,6 @@
 [tools]
 lua-language-server = "latest"
+"npm:@tailwindcss/language-server" = "latest"
 "npm:@vtsls/language-server" = "latest"
 "npm:svelte-language-server" = "latest"
 "npm:vscode-langservers-extracted" = "latest"

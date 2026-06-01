@@ -35,6 +35,7 @@ vim.lsp.enable('html')
 vim.lsp.enable('jsonls')
 vim.lsp.enable('cssls')
 vim.lsp.enable('eslint')
+vim.lsp.enable('tailwindcss')
 
 --- Format settings
 --- @type conform.setupOpts
