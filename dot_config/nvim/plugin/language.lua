@@ -36,12 +36,14 @@ vim.lsp.enable('jsonls')
 vim.lsp.enable('cssls')
 vim.lsp.enable('eslint')
 vim.lsp.enable('tailwindcss')
+vim.lsp.enable('tinymist')
 
 --- Format settings
 --- @type conform.setupOpts
 local conform_options = {
   lua = { "stylua" },
   rust = { "rustfmt" },
+  typst = { "typstyle" },
 
   format_on_save = {
     lsp_format = "fallback"
