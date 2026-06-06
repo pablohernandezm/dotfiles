@@ -3,7 +3,7 @@ vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
 --- Plugins
 vim.pack.add {
-  -- Lsp config
+  -- LSP config
   'https://github.com/neovim/nvim-lspconfig',
 
   -- Formatter
@@ -16,6 +16,15 @@ vim.pack.add {
   'https://github.com/nvim-treesitter/nvim-treesitter'
 }
 
+--- spellcheck
+vim.o.spell = false
+vim.o.spelllang = "en,es"
+vim.o.spelloptions = "camel"
+
+vim.keymap.set({ "n", "t" }, "<A-s>", function()
+  vim.o.spell = not vim.o.spell
+end, { desc = "Toggle spellcheck" })
+
 --- Completion settings
 vim.pack.add({
   'https://github.com/saghen/blink.lib',
@@ -25,7 +34,7 @@ local cmp = require('blink.cmp')
 cmp.build():pwait()
 cmp.setup()
 
---- Load lsps (installed via mise, check mise.toml)
+--- Load LSPs (installed via mise, check mise.toml)
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('vtsls')
 vim.lsp.enable('svelte')
@@ -48,7 +57,7 @@ local conform_options = {
   }
 }
 
--- oxfmt: supported filetypes
+-- oxfmt: supported file types
 local oxfmt_supported = {
   "javascript",
   "typescript",
