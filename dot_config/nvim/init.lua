@@ -15,5 +15,9 @@ vim.o.confirm = true
 vim.g.mapleader = " "
 
 --- modules
-require("search")
+require("colorscheme")
 require("custom")
+require("file-explorer")
+require("language")
+require("search")
+require("writing")
