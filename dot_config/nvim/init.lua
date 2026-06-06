@@ -9,8 +9,6 @@ vim.o.softtabstop = -1
 vim.o.expandtab = true
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.autocomplete = true
-vim.o.complete = "."
 vim.o.confirm = true
 vim.g.mapleader = " "
 
