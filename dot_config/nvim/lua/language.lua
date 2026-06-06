@@ -17,15 +17,13 @@ vim.pack.add {
 }
 
 --- Completion settings
-vim.o.completeopt = "menuone,noselect,fuzzy,nosort"
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client and client:supports_method('textDocument/completion') and vim.lsp.completion then
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-    end
-  end
+vim.pack.add({
+  'https://github.com/saghen/blink.lib',
+  'https://github.com/saghen/blink.cmp'
 })
+local cmp = require('blink.cmp')
+cmp.build():pwait()
+cmp.setup()
 
 --- Load lsps (installed via mise, check mise.toml)
 vim.lsp.enable('lua_ls')
