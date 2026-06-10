@@ -2,19 +2,19 @@
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
 --- Plugins
-vim.pack.add {
+vim.pack.add({
   -- LSP config
-  'https://github.com/neovim/nvim-lspconfig',
+  "https://github.com/neovim/nvim-lspconfig",
 
   -- Formatter
-  'https://github.com/stevearc/conform.nvim',
+  "https://github.com/stevearc/conform.nvim",
 
   -- Rust
-  'https://github.com/mrcjkb/rustaceanvim',
+  "https://github.com/mrcjkb/rustaceanvim",
 
   -- Tree-sitter
-  'https://github.com/nvim-treesitter/nvim-treesitter'
-}
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+})
 
 --- spellcheck
 vim.o.spell = false
@@ -27,34 +27,30 @@ end, { desc = "Toggle spellcheck" })
 
 --- Completion settings
 vim.pack.add({
-  'https://github.com/saghen/blink.lib',
-  'https://github.com/saghen/blink.cmp'
+  "https://github.com/saghen/blink.lib",
+  "https://github.com/saghen/blink.cmp",
 })
-local cmp = require('blink.cmp')
+local cmp = require("blink.cmp")
 cmp.build():pwait()
 cmp.setup()
 
 --- Load LSPs (installed via mise, check mise.toml)
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('vtsls')
-vim.lsp.enable('svelte')
-vim.lsp.enable('html')
-vim.lsp.enable('jsonls')
-vim.lsp.enable('cssls')
-vim.lsp.enable('eslint')
-vim.lsp.enable('tailwindcss')
-vim.lsp.enable('tinymist')
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("vtsls")
+vim.lsp.enable("svelte")
+vim.lsp.enable("html")
+vim.lsp.enable("jsonls")
+vim.lsp.enable("cssls")
+vim.lsp.enable("eslint")
+vim.lsp.enable("tailwindcss")
+vim.lsp.enable("tinymist")
 
 --- Format settings
 --- @type conform.setupOpts
-local conform_options = {
+local formatters_by_ft = {
   lua = { "stylua" },
   rust = { "rustfmt" },
   typst = { "typstyle" },
-
-  format_on_save = {
-    lsp_format = "fallback"
-  }
 }
 
 -- oxfmt: supported file types
@@ -74,11 +70,28 @@ local oxfmt_supported = {
 }
 
 for _, ft in ipairs(oxfmt_supported) do
-  conform_options[ft] = { "oxfmt" }
+  formatters_by_ft[ft] = { "oxfmt" }
 end
 
-require('conform').setup(conform_options)
-
+require("conform").setup({
+  formatters_by_ft = formatters_by_ft,
+  format_on_save = {
+    lsp_format = "fallback",
+    timeout_ms = 500,
+  },
+  formatters = {
+    stylua = {
+      append_args = {
+        "--indent-width",
+        "2",
+        "--indent-type",
+        "Spaces",
+        "--syntax",
+        "LuaJIT",
+      },
+    },
+  },
+})
 
 --- Tree-sitter
 local ts_list = {
@@ -90,13 +103,13 @@ local ts_list = {
   "jsx",
   "svelte",
   "json",
-  "html"
+  "html",
 }
-require('nvim-treesitter').install(ts_list)
+require("nvim-treesitter").install(ts_list)
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = ts_list,
   callback = function()
     vim.treesitter.start()
-  end
+  end,
 })
