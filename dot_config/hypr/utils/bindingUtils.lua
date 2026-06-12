@@ -28,7 +28,7 @@ local M = {
             hl.bind(key, action, options)
           end
         end
-      end
+      end,
     }
   end,
 }
