@@ -61,3 +61,18 @@ local vim_movement_keys = {
 for k, dir in pairs(vim_movement_keys) do
   hl.bind("SUPER + SHIFT + " .. k, hl.dsp.window.move({ direction = dir }))
 end
+
+-- Resize window
+hl.bind("ALT + R", hl.dsp.submap("resize_window"))
+hl.define_submap("resize_window", function()
+  local function resize(map, x, y)
+    hl.bind(map, hl.dsp.window.resize({ x = x, y = y, relative = true }), { repeating = true })
+  end
+
+  resize("L", 10, 0)
+  resize("H", -10, 0)
+  resize("K", 0, 10)
+  resize("K", 0, -10)
+
+  hl.bind("escape", hl.dsp.submap("reset"))
+end)
