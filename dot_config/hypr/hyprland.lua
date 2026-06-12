@@ -4,15 +4,17 @@ hl.config({
   general = {
     border_size = 0,
     gaps_out = { bottom = 15, top = 5, left = 5, right = 5 },
-    gaps_in = 5
+    gaps_in = 5,
   },
   decoration = {
-    rounding = 10
+    rounding = 10,
+    dim_inactive = true,
+    dim_strength = 0.2,
   },
   input = {
     kb_layout = "us",
-    kb_variant = "altgr-intl"
-  }
+    kb_variant = "altgr-intl",
+  },
 })
 
 -- - Smart gaps
@@ -22,7 +24,6 @@ hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 
 hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
-
 
 -- Modules
 -- - Executes applications
