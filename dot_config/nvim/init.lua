@@ -15,6 +15,7 @@ vim.o.colorcolumn = "100"
 
 --- modules
 require("colorscheme")
+require("completion")
 require("custom")
 require("file-explorer")
 require("language")

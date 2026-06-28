@@ -25,15 +25,6 @@ vim.keymap.set({ "n", "t" }, "<A-s>", function()
   vim.o.spell = not vim.o.spell
 end, { desc = "Toggle spellcheck" })
 
---- Completion settings
-vim.pack.add({
-  "https://github.com/saghen/blink.lib",
-  "https://github.com/saghen/blink.cmp",
-})
-local cmp = require("blink.cmp")
-cmp.build():pwait()
-cmp.setup()
-
 --- Load LSPs (installed via mise, check mise.toml)
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("vtsls")
