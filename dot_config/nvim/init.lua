@@ -15,7 +15,6 @@ vim.o.confirm = true
 vim.o.colorcolumn = "100"
 
 --- modules
-require("ai")
 require("colorscheme")
 require("completion")
 require("custom")
