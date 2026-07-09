@@ -5,7 +5,7 @@
       "src": "https://github.com/giuxtaposition/blink-cmp-copilot"
     },
     "blink.cmp": {
-      "rev": "bda905a4bf1b3edfa708b0be193b8c63d8620c96",
+      "rev": "9dcb1f3a9164f10c8950a790aace576f2e89dc78",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
@@ -13,7 +13,7 @@
       "src": "https://github.com/saghen/blink.lib"
     },
     "canola.nvim": {
-      "rev": "b6e41f866ae01a1f14e73fd1f57317a15020987a",
+      "rev": "f97dff59bcc285e996a454858c3c185d86521ec3",
       "src": "https://github.com/barrettruth/canola.nvim"
     },
     "conform.nvim": {
@@ -21,11 +21,11 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "copilot.lua": {
-      "rev": "7df55b20b5b653941f0bcff87e559cabb6fafeb0",
+      "rev": "760912b5992e1d6437378a9c7f2b0cb950966cf5",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "fzf-lua": {
-      "rev": "029a162a6671fdd453001fc1bca047ee3ecd5481",
+      "rev": "1c91f217f394b8c5c628f9e900fc52e923c850fa",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "kanagawa.nvim": {
@@ -33,7 +33,7 @@
       "src": "https://github.com/rebelot/kanagawa.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
+      "rev": "d224a1920728ba129880efc700d4a0180ac4ecbb",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -41,7 +41,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
-      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
+      "rev": "dad71387de386a946b123079d0e53f23028f3abd",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "nvimpack-selector": {
@@ -49,13 +49,8 @@
       "src": "https://github.com/pablohernandezm/nvimpack-selector",
       "version": "'main'"
     },
-    "opencode.nvim": {
-      "rev": "e43a41f7278680b1b362e8e07609803bf9d01684",
-      "src": "https://github.com/nickjvandyke/opencode.nvim",
-      "version": ">=0.0.0"
-    },
     "rustaceanvim": {
-      "rev": "4db27c89017ee0b53d2ec3dbaa4948efe7bd2bdf",
+      "rev": "24958d97c0e2393339e59404ebe7ee687951ea24",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "toggleterm.nvim": {
