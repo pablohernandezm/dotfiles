@@ -7,6 +7,7 @@ local apps = bindMngr
     ["SUPER + R"] = { "rofi -show drun" },
     ["SUPER + Z"] = { "zen-browser" },
     ["SUPER + V"] = { "cliphist list | rofi -dmenu -dispay-columns 2 | cliphist decode | wl-copy" },
+    ["Print"] = { 'grim - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"' },
   })
   :bind()
 
