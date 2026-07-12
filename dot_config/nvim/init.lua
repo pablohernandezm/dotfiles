@@ -14,12 +14,48 @@ vim.o.relativenumber = true
 vim.o.confirm = true
 vim.o.colorcolumn = "100"
 
+--- Plugins
+vim.pack.add({
+  --- Colorscheme
+  "https://github.com/rebelot/kanagawa.nvim",
+
+  --- File explorer
+  "https://github.com/nvim-tree/nvim-web-devicons",
+  "https://github.com/barrettruth/canola.nvim",
+
+  --- Search
+  "https://github.com/ibhagwan/fzf-lua",
+
+  --- Terminal
+  "https://github.com/akinsho/toggleterm.nvim",
+
+  --- Completion
+  "https://github.com/zbirenbaum/copilot.lua",
+  "https://github.com/giuxtaposition/blink-cmp-copilot",
+  "https://github.com/saghen/blink.lib",
+  "https://github.com/saghen/blink.cmp",
+
+  --- Language
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/stevearc/conform.nvim",
+  "https://github.com/mrcjkb/rustaceanvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+
+  --- Writing
+  "https://github.com/preservim/vim-pencil",
+
+  --- Filetype
+  "https://github.com/kevalin/mermaid.nvim",
+
+  --- Custom
+  { src = "https://github.com/pablohernandezm/nvimpack-selector", version = "main" },
+})
+
 --- modules
 require("colorscheme")
-require("completion")
-require("custom")
-require("file-explorer")
 require("language")
+require("file-explorer")
 require("search")
 require("terminal")
-require("writing")
+require("completion")
+require("custom")

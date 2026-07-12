@@ -1,21 +1,6 @@
 --- Mise
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
---- Plugins
-vim.pack.add({
-  -- LSP config
-  "https://github.com/neovim/nvim-lspconfig",
-
-  -- Formatter
-  "https://github.com/stevearc/conform.nvim",
-
-  -- Rust
-  "https://github.com/mrcjkb/rustaceanvim",
-
-  -- Tree-sitter
-  "https://github.com/nvim-treesitter/nvim-treesitter",
-})
-
 --- spellcheck
 vim.o.spell = false
 vim.o.spelllang = "en,es"

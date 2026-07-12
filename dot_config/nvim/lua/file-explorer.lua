@@ -1,8 +1,3 @@
-vim.pack.add({
-  "https://github.com/nvim-tree/nvim-web-devicons",
-  "https://github.com/barrettruth/canola.nvim",
-})
-
 local oil = require("oil")
 oil.setup({})
 
