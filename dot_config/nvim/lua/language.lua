@@ -70,22 +70,4 @@ require("conform").setup({
 })
 
 --- Tree-sitter
-local ts_list = {
-  "css",
-  "scss",
-  "javascript",
-  "typescript",
-  "tsx",
-  "jsx",
-  "svelte",
-  "json",
-  "html",
-}
-require("nvim-treesitter").install(ts_list)
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = ts_list,
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
+require("tree-sitter-manager").setup()
