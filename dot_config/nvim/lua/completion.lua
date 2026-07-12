@@ -21,3 +21,14 @@ cmp.setup({
     },
   },
 })
+
+--- autocmds
+local completion = vim.api.nvim_create_augroup("completion", { clear = true })
+
+-- disable copilot on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = completion,
+  callback = function()
+    vim.cmd("Copilot disable")
+  end,
+})
