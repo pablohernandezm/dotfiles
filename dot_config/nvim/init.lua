@@ -12,7 +12,8 @@ vim.o.expandtab = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.confirm = true
-vim.o.colorcolumn = "100"
+vim.o.textwidth = 80
+vim.o.colorcolumn = "+0"
 
 --- Plugins
 vim.pack.add({
