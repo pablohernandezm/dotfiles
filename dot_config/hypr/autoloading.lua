@@ -2,6 +2,7 @@ local statements = {
   "wl-paste --type text --watch cliphist store", -- Stores only text data
   "wl-paste --type image --watch cliphist store", -- Stores only image data
   "wayle panel start",
+  "sunsetr",
 }
 
 hl.on("hyprland.start", function()
