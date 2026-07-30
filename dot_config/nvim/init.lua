@@ -1,5 +1,5 @@
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = false,
 })
 
 vim.g.mapleader = " "
@@ -52,6 +52,7 @@ vim.pack.add({
 
   --- UI
   "https://github.com/Fildo7525/pretty_hover",
+  "https://github.com/rachartier/tiny-inline-diagnostic.nvim",
 
   --- Custom
   { src = "https://github.com/pablohernandezm/nvimpack-selector", version = "main" },

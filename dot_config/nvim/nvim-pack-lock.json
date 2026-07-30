@@ -57,6 +57,10 @@
       "rev": "f62e76d8aa3ee5f90f0e36f10800ac8be83f7e36",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "6264451f14119d63a52580e5198d6baf8518b0b2",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
     "toggleterm.nvim": {
       "rev": "9a88eae817ef395952e08650b3283726786fb5fb",
       "src": "https://github.com/akinsho/toggleterm.nvim"
