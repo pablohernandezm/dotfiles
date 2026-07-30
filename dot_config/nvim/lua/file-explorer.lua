@@ -63,16 +63,16 @@ local oil_split_open = function()
   state:new_buffer(vim.api.nvim_win_get_buf(0))
 
   --- Close when not focused
-  vim.api.nvim_create_autocmd("WinLeave", {
-    group = group,
-    buffer = state.buffer,
-    once = true,
-    callback = function()
-      local win = vim.api.nvim_get_current_win()
-      vim.api.nvim_win_close(win, true)
-      state:del_buffer()
-    end,
-  })
+  -- vim.api.nvim_create_autocmd("WinLeave", {
+  --   group = group,
+  --   buffer = state.buffer,
+  --   once = true,
+  --   callback = function()
+  --     local win = vim.api.nvim_get_current_win()
+  --     vim.api.nvim_win_close(win, true)
+  --     state:del_buffer()
+  --   end,
+  -- })
 end
 
 --- Toggle oil split
