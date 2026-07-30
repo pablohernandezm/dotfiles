@@ -5,27 +5,23 @@
       "src": "https://github.com/giuxtaposition/blink-cmp-copilot"
     },
     "blink.cmp": {
-      "rev": "0f54bd78892f587db4dcf100a23eaddfc2a9df7d",
+      "rev": "d26c6b0a4ea9188b9d10fdd5b180deba7675e3cd",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
-      "rev": "5876dd95deeb70aadbe9f1c0b7117a135061cdac",
+      "rev": "2789206e10a0e4880f808c2aaf52bc57d876b481",
       "src": "https://github.com/saghen/blink.lib"
-    },
-    "canola.nvim": {
-      "rev": "608cd79544c3adc853d0400f1f540e4f2aa4c024",
-      "src": "https://github.com/barrettruth/canola.nvim"
     },
     "conform.nvim": {
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "copilot.lua": {
-      "rev": "2a849bc7bec4d175524c332c20d48ca9ece735df",
+      "rev": "0f616b9a51cb9e2498834dfd99f6da6966158eba",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "fzf-lua": {
-      "rev": "eced685813841391087fd65f896fc6ce6339a809",
+      "rev": "28440c741e927592877514fba3db21eb188caec8",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "kanagawa.nvim": {
@@ -37,7 +33,7 @@
       "src": "https://github.com/kevalin/mermaid.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "b89138d9af0a96e6048e202a15765fc6b6416bd4",
+      "rev": "b7b920947f21339ee41fbb38c79d6445e12900aa",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-web-devicons": {
@@ -49,8 +45,12 @@
       "src": "https://github.com/pablohernandezm/nvimpack-selector",
       "version": "'main'"
     },
+    "oil.nvim": {
+      "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
     "rustaceanvim": {
-      "rev": "746d84daa3678397e7b9595b86db30b3e7af7c28",
+      "rev": "ae030cf5f8ab6aea56e03fa7e55b063111c0b833",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "toggleterm.nvim": {

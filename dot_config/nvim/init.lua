@@ -22,7 +22,7 @@ vim.pack.add({
 
   --- File explorer
   "https://github.com/nvim-tree/nvim-web-devicons",
-  "https://github.com/barrettruth/canola.nvim",
+  "https://github.com/stevearc/oil.nvim",
 
   --- Search
   "https://github.com/ibhagwan/fzf-lua",
