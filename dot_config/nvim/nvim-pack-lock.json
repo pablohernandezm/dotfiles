@@ -49,8 +49,12 @@
       "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
       "src": "https://github.com/stevearc/oil.nvim"
     },
+    "pretty_hover": {
+      "rev": "934df974ef6158b100fe910e8556e6c4a66614c2",
+      "src": "https://github.com/Fildo7525/pretty_hover"
+    },
     "rustaceanvim": {
-      "rev": "ae030cf5f8ab6aea56e03fa7e55b063111c0b833",
+      "rev": "f62e76d8aa3ee5f90f0e36f10800ac8be83f7e36",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "toggleterm.nvim": {
@@ -58,7 +62,7 @@
       "src": "https://github.com/akinsho/toggleterm.nvim"
     },
     "tree-sitter-manager.nvim": {
-      "rev": "09e3a321eea8100cacd2e759c3a6c9d350295fab",
+      "rev": "9dc4ffc4fb010e7abb976a92360c2c5a7d324c15",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     },
     "vim-pencil": {

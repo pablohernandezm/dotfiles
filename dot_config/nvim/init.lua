@@ -50,12 +50,16 @@ vim.pack.add({
   --- Filetype
   "https://github.com/kevalin/mermaid.nvim",
 
+  --- UI
+  "https://github.com/Fildo7525/pretty_hover",
+
   --- Custom
   { src = "https://github.com/pablohernandezm/nvimpack-selector", version = "main" },
 })
 
 --- modules
 require("colorscheme")
+require("ui")
 require("language")
 require("file-explorer")
 require("search")
