@@ -1,0 +1,12 @@
+[config]
+
+[config.wallpaper]
+set = true
+command = """
+awww img {{ image }} --transition-type random --transition-duration 1.4 --transition-fps 60
+"""
+
+[templates.wayle]
+input_path = "~/.config/matugen/templates/wayle.toml"
+output_path = "~/.config/wayle/matugen/colors.toml"
+
