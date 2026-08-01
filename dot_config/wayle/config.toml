@@ -1,0 +1,14 @@
+imports = ["./matugen/colors.toml"]
+
+[bar]
+location = "top"
+scale = 0.8
+
+[[bar.layout]]
+monitor = "*"
+left = ["dashboard"]
+center = ["clock"]
+right = ["volume", "network", "bluetooth", "battery"]
+
+[modules.clock]
+format = "%H:%M"

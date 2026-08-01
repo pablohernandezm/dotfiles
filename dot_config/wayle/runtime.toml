@@ -1,0 +1,51 @@
+[bar]
+button-bg-opacity = 0
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "network",
+    "weather",
+    "separator",
+    "media",
+]
+center = []
+right = [
+    "systray",
+    "separator",
+    "volume",
+    "separator",
+    "clock",
+    "world-clock",
+]
+
+[styling]
+matugen-scheme = "vibrant"
+
+[modules.clock]
+format = "%a, %H:%M"
+
+[modules.dashboard]
+right-click = "rofi -show drun"
+
+[modules.hyprland-workspaces]
+show-special = false
+display-mode = "none"
+app-icons-show = true
+
+[modules.network]
+icon-show = false
+
+[modules.weather]
+location = "10.3982,-75.4933"
+format = "{{ temp }}{{ temp_unit }} {{ condition }}"
+icon-show = false
+
+[modules.world-clock]
+icon-show = false
+
+[wallpaper]
+engine-enabled = false
+cycling-directory = "/home/pablo/Pictures/Wallpapers"
+cycling-same-image = true
