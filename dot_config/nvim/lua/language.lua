@@ -1,5 +1,8 @@
---- Mise
-vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+--- Nix neovim-tools profile
+local neovim_bin = vim.env.HOME .. "/.config/nix/neovim-tools/bin"
+if vim.fn.isdirectory(neovim_bin) == 1 then
+  vim.env.PATH = neovim_bin .. ":" .. vim.env.PATH
+end
 
 --- spellcheck
 vim.o.spell = false
@@ -16,10 +19,22 @@ vim.lsp.enable("vtsls")
 vim.lsp.enable("svelte")
 vim.lsp.enable("html")
 vim.lsp.enable("jsonls")
-vim.lsp.enable("cssls")
+vim.lsp.enable("emmet_language_server")
 vim.lsp.enable("eslint")
 vim.lsp.enable("tailwindcss")
 vim.lsp.enable("tinymist")
+
+---> lsp settings
+--- css
+-- vim.lsp.config("cssls", {
+--   settings = {
+--     css = {
+--       lint = {
+--         unknownAtRules = "ignore",
+--       },
+--     },
+--   },
+-- })
 
 --- Format settings
 --- @type conform.setupOpts
