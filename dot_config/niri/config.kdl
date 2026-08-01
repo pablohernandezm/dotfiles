@@ -1,3 +1,9 @@
+spawn-at-startup "sunsetr"
+spawn-at-startup "awww-daemon"
+spawn-sh-at-startup "wayle panel start"
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+
 input {
     keyboard {
         xkb {
@@ -61,12 +67,6 @@ layout {
 
     background-color "transparent"
 }
-
-spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
-spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
-spawn-sh-at-startup "wayle panel start"
-spawn-at-startup "sunsetr"
-
 
 hotkey-overlay {
     // skip-at-startup
