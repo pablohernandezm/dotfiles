@@ -20,22 +20,24 @@ vim.lsp.enable("svelte")
 vim.lsp.enable("html")
 vim.lsp.enable("jsonls")
 vim.lsp.enable("emmet_language_server")
+vim.lsp.enable("cssls")
 vim.lsp.enable("eslint")
 vim.lsp.enable("tailwindcss")
 vim.lsp.enable("tinymist")
 
 ---> lsp settings
 --- css
--- vim.lsp.config("cssls", {
---   settings = {
---     css = {
---       lint = {
---         unknownAtRules = "ignore",
---       },
---     },
---   },
--- })
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  pattern = "*.css",
+  callback = function(args)
+    local first_line = vim.api.nvim_buf_get_lines(args.buf, 0, 1, false)[1] or ""
 
+    -- disable diagnostics for files that start with gtk-css comment
+    if first_line:match("gtk%-css") then
+      vim.diagnostic.enable(false, { bufnr = args.buf })
+    end
+  end,
+})
 --- Format settings
 --- @type conform.setupOpts
 local formatters_by_ft = {
