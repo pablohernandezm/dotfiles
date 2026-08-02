@@ -10,3 +10,7 @@ awww img {{ image }} --transition-type random --transition-duration 1.4 --transi
 input_path = "~/.config/matugen/templates/wayle.toml"
 output_path = "~/.config/wayle/matugen/colors.toml"
 
+[templates.ghostty]
+input_path = "~/.config/matugen/templates/ghostty"
+output_path = "~/.config/ghostty/themes/Matugen"
+post_hook = "pkill -SIGUSR2 ghostty"
