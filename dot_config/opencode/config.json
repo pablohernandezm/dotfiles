@@ -2,19 +2,6 @@
   "$schema": "https://opencode.ai/config.json",
   "lsp": true,
   "plugin": ["@sveltejs/opencode"],
-  "provider": {
-    "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "http://localhost:11434/v1"
-      },
-      "models": {
-        "qwen2.5-coder:0.5b": {
-          "name": "qwen2.5-coder:0.5b"
-        }
-      }
-    }
-  },
   "agent": {
     "ask": {
       "mode": "primary",
