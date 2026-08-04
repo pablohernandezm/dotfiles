@@ -22,3 +22,12 @@ post_hook = "pkill -SIGUSR2 ghostty"
 [templates.zed]
 input_path = '~/.config/matugen/templates/zed.json'
 output_path = '~/.config/zed/themes/matugen.json'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+post_hook = 'gsettings set org.gnome.desktop.interface color-scheme prefer-{{mode}}'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
