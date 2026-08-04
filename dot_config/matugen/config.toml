@@ -18,3 +18,7 @@ output_path = "~/.config/ghostty/themes/Matugen"
 input_path = "~/.config/matugen/templates/ghostty.css"
 output_path = "~/.config/ghostty/Matugen.css"
 post_hook = "pkill -SIGUSR2 ghostty"
+
+[templates.zed]
+input_path = '~/.config/matugen/templates/zed.json'
+output_path = '~/.config/zed/themes/matugen.json'
