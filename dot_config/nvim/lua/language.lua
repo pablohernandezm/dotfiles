@@ -24,6 +24,7 @@ vim.lsp.enable("cssls")
 vim.lsp.enable("eslint")
 vim.lsp.enable("tailwindcss")
 vim.lsp.enable("tinymist")
+vim.lsp.enable("nixd")
 
 ---> lsp settings
 --- css
