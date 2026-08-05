@@ -93,7 +93,7 @@ binds {
 
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
-    Mod+Z hotkey-overlay-title="Run an Application: zen" { spawn "zen-browser"; }
+    Mod+Z hotkey-overlay-title="Run an Application: zen" { spawn "flatpak" "run" "app.zen_browser.zen"; }
     Mod+V hotkey-overlay-title="Run an Application: clpboard history" { spawn-sh "cliphist list | rofi -dmenu -dispay-columns 2 | cliphist decode | wl-copy"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
