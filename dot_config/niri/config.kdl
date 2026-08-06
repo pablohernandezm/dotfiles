@@ -16,15 +16,15 @@ input {
     }
 }
 
-/-output "HDMI-A-1" {
+output "HDMI-A-1" {
     // Uncomment this line to disable this output.
     // off
 
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1366x768@59.790"
+    mode "1366x768@60.000"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1
+    scale 1.0
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -93,7 +93,7 @@ binds {
 
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
-    Mod+Z hotkey-overlay-title="Run an Application: zen" { spawn "flatpak" "run" "app.zen_browser.zen"; }
+    Mod+Z hotkey-overlay-title="Run an Application: zen" { spawn "zen"; }
     Mod+V hotkey-overlay-title="Run an Application: clpboard history" { spawn-sh "cliphist list | rofi -dmenu -dispay-columns 2 | cliphist decode | wl-copy"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
