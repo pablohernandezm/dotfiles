@@ -43,6 +43,7 @@ vim.pack.add({
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/mrcjkb/rustaceanvim",
   "https://github.com/romus204/tree-sitter-manager.nvim",
+  "https://github.com/chomosuke/typst-preview.nvim",
 
   --- Writing
   "https://github.com/preservim/vim-pencil",

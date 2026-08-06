@@ -1,3 +1,7 @@
+require("typst-preview").setup({
+  dependencies_bin = { tinymist = "tinymist" },
+})
+
 vim.api.nvim_buf_create_user_command(0, "TypstOpenPdf", function()
   local filepath = vim.api.nvim_buf_get_name(0)
   local pdf_path = filepath:gsub("%.typ$", ".pdf")

@@ -69,6 +69,10 @@
       "rev": "9dc4ffc4fb010e7abb976a92360c2c5a7d324c15",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     },
+    "typst-preview.nvim": {
+      "rev": "1c2e19486397be1c580b560fc50ee36abe329c46",
+      "src": "https://github.com/chomosuke/typst-preview.nvim"
+    },
     "vim-pencil": {
       "rev": "6d70438a8886eaf933c38a7a43a61adb0a7815ed",
       "src": "https://github.com/preservim/vim-pencil"
