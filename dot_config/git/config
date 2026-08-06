@@ -34,5 +34,5 @@
 [url "git@github.com:pablohernandezm/"]
   insteadOf = "gh:"
 
-[url "git@codeberg.org/hemedez/"]
+[url "ssh://git@codeberg.org/hemedez/"]
   insteadOf = "cb:"
