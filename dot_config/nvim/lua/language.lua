@@ -45,6 +45,7 @@ local formatters_by_ft = {
   lua = { "stylua" },
   rust = { "rustfmt" },
   typst = { "typstyle" },
+  nix = { "alejandra" },
 }
 
 -- oxfmt: supported file types
