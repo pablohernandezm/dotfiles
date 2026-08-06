@@ -32,7 +32,7 @@
   diffFilter = diff-so-fancy --patch
 
 [url "git@github.com:pablohernandezm/"]
-  insteadOf = "me:"
-
-[url "git@github.com:"]
   insteadOf = "gh:"
+
+[url "git@codeberg.org/hemedez/"]
+  insteadOf = "cb:"
