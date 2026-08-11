@@ -16,6 +16,15 @@ input {
     }
 }
 
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
+
+
 output "HDMI-A-1" {
     // Uncomment this line to disable this output.
     // off
