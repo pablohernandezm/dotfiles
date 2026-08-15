@@ -89,4 +89,35 @@ require("conform").setup({
 })
 
 --- Tree-sitter
-require("tree-sitter-manager").setup()
+local available = require("nvim-treesitter").get_available()
+
+local ts_filetypes = {
+  "svelte",
+  "html",
+  "css",
+  "javascript",
+  "typescript",
+  "rust",
+  "json",
+  "toml",
+}
+
+vim.list_extend(ts_filetypes, vim.tbl_keys(formatters_by_ft))
+
+ts_filetypes = vim.tbl_filter(function(value)
+  return vim.list_contains(available, value)
+end, ts_filetypes)
+
+require("nvim-treesitter").install(ts_filetypes)
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = ts_filetypes,
+  callback = function()
+    vim.treesitter.start()
+
+    vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    vim.wo.foldmethod = "expr"
+
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
