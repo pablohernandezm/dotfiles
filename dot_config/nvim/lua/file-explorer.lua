@@ -36,11 +36,13 @@ local split_width = function()
     w = vim.o.textwidth
   end
 
-  if w and w < min then
-    w = min
-  end
+  local calculated = w and math.abs(math.floor((vim.o.columns - w) / 2)) or nil
 
-  return w and math.abs(math.floor((vim.o.columns - w) / 2)) or nil
+  if calculated and calculated < min then
+    return min
+  else
+    return calculated
+  end
 end
 
 --- Close oil split
