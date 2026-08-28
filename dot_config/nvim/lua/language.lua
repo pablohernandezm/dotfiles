@@ -39,6 +39,19 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
     end
   end,
 })
+
+-- svelte
+vim.lsp.config("svelte", {
+  settings = {
+    css = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    },
+  },
+})
+
 --- Format settings
 --- @type conform.setupOpts
 local formatters_by_ft = {
@@ -114,9 +127,9 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = ts_filetypes,
   callback = function()
     vim.treesitter.start()
-
     vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
     vim.wo.foldmethod = "expr"
+    vim.opt.foldlevel = 99
 
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,

@@ -5,7 +5,7 @@
       "src": "https://github.com/giuxtaposition/blink-cmp-copilot"
     },
     "blink.cmp": {
-      "rev": "e116ff9c5c1c2ed6bcdb2e0a6e547099876a8116",
+      "rev": "101d71861f6a012f2be80e4100720874330d86aa",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
@@ -29,15 +29,15 @@
       "src": "https://github.com/rebelot/kanagawa.nvim"
     },
     "mermaid.nvim": {
-      "rev": "b6ab941f418809d40102f11ace9da3569c33e52e",
+      "rev": "01779e3c9f77ce0741f4992536fd0a81b9fb9fef",
       "src": "https://github.com/kevalin/mermaid.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "51dbf5359da86721662c87ca10eb73add973737b",
+      "rev": "3928e638fdedf195b23ae5a18f024afa487982bc",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "074aa4422bf029908338e855d0c0f71470a971bb",
+      "rev": "8b98b4470eb326f1c7b50dae79f8c963568e5720",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/Fildo7525/pretty_hover"
     },
     "rustaceanvim": {
-      "rev": "5ceae75d8141290c03e119b4c4ce785574a0325b",
+      "rev": "40b50ae2335faa2a4e136a196908b4700014f0b0",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "tiny-inline-diagnostic.nvim": {
