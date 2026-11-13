@@ -1,25 +1,25 @@
 --- Look and feel
 -- General
 hl.config({
-  general = {
-    border_size = 0,
-    gaps_out = { bottom = 15, top = 5, left = 5, right = 5 },
-    gaps_in = 5,
-    layout = "scrolling",
-  },
-  decoration = {
-    rounding = 16,
-    dim_inactive = true,
-    dim_strength = 0.2,
-  },
-  input = {
-    kb_layout = "us",
-    kb_variant = "altgr-intl",
-  },
+    general = {
+        border_size = 0,
+        gaps_out = { bottom = 15, top = 5, left = 5, right = 5 },
+        gaps_in = 5,
+        layout = "scrolling"
+    },
+    decoration = {
+        rounding = 16,
+        dim_inactive = true,
+        dim_strength = 0.2
+    },
+    input = {
+        kb_layout = "us",
+        kb_variant = "altgr-intl"
+    },
 
-  scrolling = {
-    column_width = 1.0,
-  },
+    scrolling = {
+        column_width = 1.0
+    }
 })
 
 -- Smart gaps

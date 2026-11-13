@@ -16,6 +16,7 @@ right = [
     "separator",
     "volume",
     "separator",
+    "notifications",
     "clock",
     "world-clock",
 ]
@@ -35,7 +36,6 @@ display-mode = "none"
 app-icons-show = true
 
 [modules.media]
-icon-type = "spinning-disc"
 format = "{{ title }}  - {{ artist }}"
 label-show = false
 

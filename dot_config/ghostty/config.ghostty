@@ -1,3 +1,4 @@
 theme = Matugen
 gtk-custom-css = Matugen.css
+desktop-notifications = true
 # window-decoration = false
